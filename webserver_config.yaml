@@ -19,13 +19,6 @@ spec:
         ports:
           - name: web
             containerPort: 80
-        volumeMounts:
-        - name: wetter-getter-volume
-          mountPath: /usr/share/nginx/html
-      volumes:
-      - name: wetter-getter-volume
-        hostPath:
-          path: /run/desktop/mnt/host/c/Users/luk/Documents/VS/wetter_getter_kubernetes/flutter_hello_world/build/web
 ---
 apiVersion: v1
 kind: Service
@@ -54,3 +47,5 @@ spec:
         - name: nginx-service
           namespace: default
           port: 80
+  tls:
+    certResolver: letsencrypt

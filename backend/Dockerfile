@@ -14,7 +14,7 @@ RUN pip install pipenv
 RUN /bin/bash -c "pipenv install --deploy --ignore-pipfile"
 
 # Überschreiben der Enviroment Variablen machen wir jetzt in docker-compose
-RUN echo 'AQIN_KEY = "e6e52e8fc683d9fcc03235abe9db9d8bc101230b"\nUmweltstationID = "6143"' > '.env'
+# RUN echo 'AQIN_KEY = "e6e52e8fc683d9fcc03235abe9db9d8bc101230b"\nUmweltstationID = "6143"' > '.env'
 
 # pipenv run, da pipenv shell nicht geht + Starten des Servers "--host", "0.0.0.0" lässt alle IPS zu
 # ENTRYPOINT ["pipenv", "run", "uvicorn", "rest_api:app"]

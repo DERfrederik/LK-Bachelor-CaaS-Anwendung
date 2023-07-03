@@ -85,3 +85,5 @@ spec:
       middlewares:
         - name: fastapi-stripprefix
           namespace: default
+  tls:
+    certResolver: letsencrypt
