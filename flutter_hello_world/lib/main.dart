@@ -9,10 +9,10 @@ import 'package:http/http.dart' as http;
 Future<Weather> fetchWeather({int? timestamp}) async {
   final http.Response response;
   if (timestamp == null) {
-    response = await http.get(Uri.parse('https://cablesalad.io/api/weather/'));
+    response = await http.get(Uri.parse('localhost/api/weather/'));
   } else {
     response = await http.get(
-      Uri.parse('https://cablesalad.io/api/weather/')
+      Uri.parse('localhost/api/weather/')
           .replace(queryParameters: {'timestamp': '$timestamp'}),
     );
   }
@@ -63,7 +63,7 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (context) => MyAppState(),
       child: MaterialApp(
-        title: 'Namer App',
+        title: 'Localhost - Wetter Getter',
         theme: ThemeData(
           // useMaterial3: true,
           // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
